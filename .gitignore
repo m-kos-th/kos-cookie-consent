@@ -1,0 +1,25 @@
+# Dependencies
+/vendor/
+/node_modules/
+composer.lock
+
+# Environment / secrets
+.env
+.env.*
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Build / cache
+/cache/
+/tmp/
+/dist/
+/build/

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+  xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+
+  <table name="_KosCookie">
+    <field name="id" type="integer" size="10">
+      <unsigned/>
+      <autoincrement/>
+      <key/>
+    </field>
+    <field name="name" type="string" size="255">
+      <notnull/>
+    </field>
+    <field name="code_header" type="text" size="65535"/>
+    <field name="code_body" type="text" size="65535"/>
+    <field name="code_footer" type="text" size="65535"/>
+    <field name="active" type="boolean">
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="always" type="boolean">
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="remove" type="boolean">
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="site_id" type="integer" size="10">
+      <unsigned/>
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="managed_cookie_names" type="text" size="65535"/>
+    <field name="managed_cookie_domain" type="string" size="255"/>
+    <field name="managed_cookie_path" type="string" size="255">
+      <default value="/"/>
+    </field>
+    <field name="sort_order" type="integer" size="10">
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="created" type="datetime"/>
+    <field name="updated" type="datetime"/>
+    <index name="remove">
+      <col>remove</col>
+    </index>
+    <index name="site_id">
+      <col>site_id</col>
+    </index>
+    <index name="sort_order">
+      <col>sort_order</col>
+    </index>
+  </table>
+
+  <table name="_KosCookieContent">
+    <field name="id" type="integer" size="10">
+      <unsigned/>
+      <autoincrement/>
+      <key/>
+    </field>
+    <field name="cid" type="integer" size="10">
+      <unsigned/>
+      <notnull/>
+    </field>
+    <field name="lang" type="integer" size="10">
+      <unsigned/>
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="lang_code" type="string" size="32"/>
+    <field name="name" type="string" size="255">
+      <notnull/>
+    </field>
+    <field name="content" type="text" size="65535"/>
+    <field name="created" type="datetime"/>
+    <field name="updated" type="datetime"/>
+    <index name="cid">
+      <col>cid</col>
+    </index>
+    <index name="lang">
+      <col>lang</col>
+    </index>
+  </table>
+
+  <table name="_KosCookiePopupCopy">
+    <field name="id" type="integer" size="10">
+      <unsigned/>
+      <autoincrement/>
+      <key/>
+    </field>
+    <field name="site_id" type="integer" size="10">
+      <unsigned/>
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="lang" type="integer" size="10">
+      <unsigned/>
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="lang_code" type="string" size="32"/>
+    <field name="banner_title" type="text" size="65535"/>
+    <field name="banner_summary" type="text" size="65535"/>
+    <field name="modal_title" type="text" size="65535"/>
+    <field name="modal_intro_one" type="text" size="65535"/>
+    <field name="modal_intro_two" type="text" size="65535"/>
+    <field name="preferences_title" type="text" size="65535"/>
+    <field name="save_label" type="string" size="255"/>
+    <field name="accept_label" type="string" size="255"/>
+    <field name="decline_label" type="string" size="255"/>
+    <field name="settings_label" type="string" size="255"/>
+    <field name="created" type="datetime"/>
+    <field name="updated" type="datetime"/>
+    <index name="site_id">
+      <col>site_id</col>
+    </index>
+    <index name="lang">
+      <col>lang</col>
+    </index>
+    <index name="lang_code">
+      <col>lang_code</col>
+    </index>
+  </table>
+
+  <table name="_KosCookieConsentSetting">
+    <field name="setting_key" type="string" size="100">
+      <notnull/>
+      <key/>
+    </field>
+    <field name="setting_value" type="text" size="65535"/>
+    <field name="updated" type="datetime"/>
+  </table>
+
+  <table name="_KosIP">
+    <field name="id" type="integer" size="10">
+      <unsigned/>
+      <autoincrement/>
+      <key/>
+    </field>
+    <field name="consent_id" type="string" size="64"/>
+    <field name="IP" type="string" size="45"/>
+    <field name="created" type="datetime"/>
+    <index name="consent_id">
+      <col>consent_id</col>
+    </index>
+    <index name="IP">
+      <col>IP</col>
+    </index>
+  </table>
+
+  <table name="_KosLog">
+    <field name="id" type="integer" size="10">
+      <unsigned/>
+      <autoincrement/>
+      <key/>
+    </field>
+    <field name="pid" type="integer" size="10">
+      <unsigned/>
+      <notnull/>
+    </field>
+    <field name="cid" type="integer" size="10">
+      <unsigned/>
+      <notnull/>
+    </field>
+    <field name="site_id" type="integer" size="10">
+      <unsigned/>
+      <default value="0"/>
+      <notnull/>
+    </field>
+    <field name="consent_version" type="string" size="64"/>
+    <field name="created" type="datetime"/>
+    <index name="pid">
+      <col>pid</col>
+    </index>
+    <index name="cid">
+      <col>cid</col>
+    </index>
+    <index name="site_id">
+      <col>site_id</col>
+    </index>
+    <index name="consent_version">
+      <col>consent_version</col>
+    </index>
+  </table>
+</schema>
