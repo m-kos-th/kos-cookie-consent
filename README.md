@@ -1,5 +1,8 @@
 # KOS Cookie Consent Package
 
+<img width="800" height="452" alt="ScreenRecording2569-08-26at10 16 29-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/9770c28b-3d97-4ac0-9506-c2e3450ab5d5" />
+
+
 Cookie consent package for Concrete CMS with multilingual popup copy, per-site cookie categories, consent logs/export, and gated tracking-code injection.
 
 For a shorter Thai summary for PM/client handoff, see [PACKAGE_DETAILS.md](PACKAGE_DETAILS.md).  
